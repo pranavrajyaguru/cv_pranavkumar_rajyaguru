@@ -1,0 +1,80 @@
+\usepackage[a4paper,left=1.70cm,right=1.70cm,top=1.35cm,bottom=1.35cm]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage{newtxtext}
+\usepackage{microtype}
+\usepackage{graphicx}
+\usepackage{tikz}
+\usepackage{fontawesome5}
+\usepackage{xcolor}
+\usepackage{enumitem}
+\usepackage{tabularx}
+\usepackage{array}
+\usepackage{hyperref}
+\usepackage{ragged2e}
+
+\definecolor{cvblue}{RGB}{25,78,96}
+\definecolor{linkblue}{RGB}{0,82,170}
+\hypersetup{colorlinks=true,urlcolor=linkblue,linkcolor=linkblue}
+
+\pagestyle{empty}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0pt}
+\setlength{\emergencystretch}{1em}
+\tolerance=1200
+\pretolerance=700
+\hfuzz=0.3pt
+\linespread{1.00}
+
+\newcommand{\cvsection}[2]{%
+  \par\vspace{0.30em}%
+  \noindent{\color{cvblue}\fontsize{13}{14}\selectfont\bfseries
+    \makebox[1.45em][l]{\fontsize{12.5}{14}\selectfont #1}%
+    #2}\par
+  \vspace{-0.56em}%
+  \noindent{\color{cvblue}\rule{\textwidth}{0.55pt}}\par
+  \vspace{-0.04em}%
+}
+
+\newcommand{\cventry}[2]{%
+  \par\noindent
+  \fontsize{11.5}{13.2}\selectfont
+  \begin{tabularx}{\textwidth}{@{}>{\bfseries\raggedright\arraybackslash}X>{\bfseries\raggedleft\arraybackslash}r@{}}
+    #1 & \mbox{#2}
+  \end{tabularx}\par
+  \vspace{-0.08em}%
+}
+
+% ==================================================
+% COMPANY / ORGANISATION LINE
+% ==================================================
+% Spacing note:
+%   The value in \\vspace below controls the gap between the
+%   company/organisation line (e.g. "Cybex GmbH") and the first bullet.
+%   Increase it for more space; decrease it for a tighter layout.
+%   Recommended range: 0.10em to 0.35em.
+\newcommand{\cvsubline}[1]{%
+  \fontsize{11}{12.8}\selectfont
+  \noindent{\color{linkblue}\itshape\bfseries #1}\par
+  \vspace{0.22em}%  % <-- GAP: company line -> first bullet
+}
+
+% ==================================================
+% BULLET LIST
+% ==================================================
+\newenvironment{cvitems}{%
+  \fontsize{10.6}{12.3}\selectfont
+  \begin{itemize}[
+    leftmargin=1.45em,
+    labelsep=0.50em,
+    itemindent=0pt,
+    label=\textbullet,
+    itemsep=0.02em,
+    topsep=0.01em,
+    parsep=0pt,
+    partopsep=0pt
+  ]
+  \justifying
+  \setlength{\parfillskip}{0pt plus 1fil}
+}{\end{itemize}\vspace{-0.18em}}
+
+\newcommand{\compactgap}{\vspace{0.08em}}
