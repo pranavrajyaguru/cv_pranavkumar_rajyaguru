@@ -1,13 +1,19 @@
 # Pranavkumar Rajyaguru CV
 
-Independent LaTeX CV repository.
+Deutsche Version des Lebenslaufs fuer Overleaf.
+
+## Dateien
+
+- Hauptdatei: `main.tex`
+- Stil: `cvstyle.tex`
+- Inhalte: `sections/*.tex`
+- Foto: `images/profile.png`
+- Aktuelle PDF: `main.pdf`
 
 ## Build
 
-Compile `main.tex` with pdfLaTeX:
+Empfohlener Compiler: pdfLaTeX
 
 ```sh
 pdflatex main.tex
 ```
-
-Each CV section is stored in `sections/*.tex`. The current generated PDF is `main.pdf`.
